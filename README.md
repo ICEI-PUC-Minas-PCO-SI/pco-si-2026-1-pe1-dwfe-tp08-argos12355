@@ -5,15 +5,17 @@ Nesta atividade, você fazer exercícios de programação para vai praticar a ma
 
 ## Informações Gerais
 
-- Nome:
-- Matricula:
+- Nome: João Vitor Alves Araujo
+- Matricula: ![imagem](Imagem/Java.png)
 
 ## Prints do console do navegador
 
-<<  COLOQUE A IMAGEM - LISTAGEM DE TÍTULOS - AQUI >>
+![imagem](public/imagem/Titulos.png)
 
-<<  COLOQUE A IMAGEM - CÁLCULO DE MÉDIAS - AQUI >>
+![imagem](public/imagem/CÁLCULO%20DE%20MÉDIAS.png)
+![imagem](public/imagem/CÁLCULO%20DE%20MÉDIAS2.png)
 
-<<  COLOQUE A IMAGEM - RESUMO DE VERIFICAÇÕES (SOME E EVERY) - AQUI >>
+![imagem](public/imagem/SOME%20E%20EVERY.png)
+![imagem](public/imagem/SOME%20E%20EVERY%202.png)
 
-<<  COLOQUE A IMAGEM - PÁGINA COM O RESUMO - AQUI >>
+![imagem](public/imagem/Resumo.png)
