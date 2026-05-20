@@ -83,4 +83,92 @@ const titulosEmCaixaAlta = catalogo.map(function(item) {
   return item.titulo.toUpperCase();
 });
 
-console.log("Títulos em caixa alta:", titulosEmCaixaAlta);
+console.log("Títulos:", titulosEmCaixaAlta);
+// C) Seleção com filter
+
+const naoAssistidos = catalogo.filter(function(item) {
+  return item.assistido === false;
+});
+
+console.log("Quantidade de não assistidos:", naoAssistidos.length);
+
+// D) Busca com find
+
+const itemNotaAlta = catalogo.find(function(item) {
+  return item.nota >= 9;
+});
+
+if (itemNotaAlta) {
+  console.log(`Primeiro item com nota >= 9: ${itemNotaAlta.titulo} - Nota: ${itemNotaAlta.nota}`);
+} else {
+  console.log("Nenhum item com nota maior ou igual a 9 foi encontrado.");
+}
+
+// E) Agregação com reduce
+
+const somaNotas = catalogo.reduce(function(soma, item) {
+  return soma + item.nota;
+}, 0);
+
+const mediaNotas = somaNotas / catalogo.length;
+
+const assistidos = catalogo.filter(function(item) {
+  return item.assistido === true;
+});
+
+const somaNotasAssistidos = assistidos.reduce(function(soma, item) {
+  return soma + item.nota;
+}, 0);
+
+const mediaAssistidos = somaNotasAssistidos / assistidos.length;
+
+console.log("Média geral das notas:", mediaNotas.toFixed(2));
+console.log("Média dos assistidos:", mediaAssistidos.toFixed(2));
+
+// F) Checagens com some e every
+
+const existeAntesDe2000 = catalogo.some(function(item) {
+  return item.ano < 2000;
+});
+
+const todosTemGenero = catalogo.every(function(item) {
+  return item.generos.length > 0;
+});
+
+console.log("Existe algum item antes de 2000?", existeAntesDe2000);
+console.log("Todos os itens têm pelo menos 1 gênero?", todosTemGenero);
+
+// B.4 - Saída na tela
+
+const quantidadeFilmes = catalogo.filter(function(item) {
+  return item.tipo === "filme";
+}).length;
+
+const quantidadeSeries = catalogo.filter(function(item) {
+  return item.tipo === "serie";
+}).length;
+
+const ranking = [...catalogo]
+  .sort(function(a, b) {
+    return b.nota - a.nota;
+  })
+  .slice(0, 3);
+
+const output = document.getElementById("output");
+
+output.innerHTML = `
+  <h2>Resumo do Catálogo</h2>
+
+  <p>Total de itens no catálogo: ${catalogo.length}</p>
+  <p>Quantidade de filmes: ${quantidadeFilmes}</p>
+  <p>Quantidade de séries: ${quantidadeSeries}</p>
+  <p>Quantidade de não assistidos: ${naoAssistidos.length}</p>
+  <p>Média geral de notas: ${mediaNotas.toFixed(2)}</p>
+
+  <h3>Top 3 notas</h3>
+  <ol>
+    ${ranking.map(function(item) {
+      return `<li>${item.titulo} - Nota: ${item.nota}</li>`;
+    }).join("")}
+  </ol>
+`;
