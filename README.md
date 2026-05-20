@@ -6,7 +6,7 @@ Nesta atividade, você fazer exercícios de programação para vai praticar a ma
 ## Informações Gerais
 
 - Nome: João Vitor Alves Araujo
-- Matricula: ![imagem](Imagem/Java.png)
+- Matricula: 1640692
 
 ## Prints do console do navegador
 
